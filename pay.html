@@ -1,0 +1,12 @@
+ if (typeof WeixinJSBridge == "undefined") {
+                    alert("请使用微信浏览器打开")
+                } else {
+                    WeixinJSBridge.invoke('getBrandWCPayRequest', data, (res) => {
+                        if (res.err_msg == "get_brand_wcpay_request:ok") {
+                            alert("支付成功");
+                        } else {
+                            //这里支付失败和支付取消统一处理
+                            alert("支付取消");
+                        }
+                    })
+                }
